@@ -45,10 +45,16 @@ GROUP BY a.city;
 SELECT
 AVG(orders_with_total_price.total_price)
 FROM
-orders_with_total_price
+orders_with_total_price;
 ```
 # Представление
 Получение заказов клиентов и их сумма
 ```sql
-SELECT * FROM orders_with_total_price
+SELECT * FROM orders_with_total_price;
 ```
+# Хранимая процедура
+Посмотреть доход за последний месяц
+```sql
+CALL get_last_month_revenue;
+```
+
