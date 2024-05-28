@@ -47,3 +47,8 @@ AVG(orders_with_total_price.total_price)
 FROM
 orders_with_total_price
 ```
+# Представление
+Получение заказов клиентов и их сумма
+```sql
+SELECT * FROM orders_with_total_price
+```
