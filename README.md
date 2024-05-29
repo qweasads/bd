@@ -61,3 +61,9 @@ CALL get_last_month_revenue;
 ```sql
 CALL add_customer('ФИО', 'Номер', 'Почта');
 ```
+
+# Функция
+Получение суммы заказа по id
+```sql
+SELECT calculate_order_total(8); 
+```
