@@ -57,4 +57,7 @@ SELECT * FROM orders_with_total_price;
 ```sql
 CALL get_last_month_revenue;
 ```
-
+Добавление нового клиента
+```sql
+CALL add_customer('ФИО', 'Номер', 'Почта');
+```
