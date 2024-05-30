@@ -22,7 +22,7 @@ SELECT
 customers.id,
 customers.name,
 COUNT(orders_with_total_price.id) AS orders_count,
-COALESCE(SUM(orders_with_total_price.total_price), 0) as total_price
+IFNULL(SUM(orders_with_total_price.total_price), 0) as total_price
 FROM 
 customers
 LEFT JOIN
