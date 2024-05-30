@@ -1,5 +1,6 @@
 # Скриншот 
-![itog](https://github.com/qweasads/bd/assets/126321177/e42f0ffc-482b-4c3d-9ad6-d3a6653111df)
+![itog](https://github.com/qweasads/bd/assets/126321177/66cf708b-dd89-4b51-babf-4b9b091ee255)
+
 # Типовые запросы
 1.Отобразить общую сумму продаж за последний месяц
 ```sql
