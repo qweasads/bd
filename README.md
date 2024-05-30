@@ -67,3 +67,48 @@ CALL add_customer('ФИО', 'Номер', 'Почта');
 ```sql
 SELECT calculate_order_total(8); 
 ```
+
+# Создание ролей и прав
+1. Роль "Пользователь"
+```sql
+-- создание роли
+CREATE ROLE IF NOT EXISTS basic_user_role; 
+
+-- присвоение прав
+GRANT SELECT ON mydb.addresses TO basic_user_role;
+GRANT SELECT ON mydb.customers TO basic_user_role;
+GRANT SELECT ON mydb.goods TO basic_user_role;
+GRANT SELECT ON mydb.order_details TO basic_user_role;
+GRANT SELECT ON mydb.orders TO basic_user_role;
+
+-- создание пользователя, если он еще не существует
+CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY '123';
+
+-- назначение роли пользователю
+GRANT basic_user_role TO 'user'@'localhost';
+-- активация роли для пользователя
+SET DEFAULT ROLE basic_user_role TO 'user'@'localhost';
+-- применение изменений прав
+FLUSH PRIVILEGES;
+```
+2. Роль "Администратор"
+```sql
+-- создание роли
+CREATE ROLE IF NOT EXISTS admin_role; 
+
+-- Предоставление полных прав администратору на схему mydb
+GRANT ALL PRIVILEGES ON mydb.* TO admin_role;
+
+-- создание пользователя, если он еще не существует
+CREATE USER IF NOT EXISTS 'admin'@'localhost' IDENTIFIED BY '123';
+
+-- назначение роли пользователю
+GRANT admin_role TO 'admin'@'localhost';
+
+-- активация роли для пользователя
+SET DEFAULT ROLE admin_role TO 'admin'@'localhost';
+
+-- применение изменений прав
+FLUSH PRIVILEGES;
+```
+
