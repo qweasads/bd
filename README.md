@@ -80,14 +80,14 @@ SELECT @customers_count;
 1. Роль "Пользователь"
 ```sql
 -- создание роли
-CREATE ROLE IF NOT EXISTS basic_user_role; 
+CREATE ROLE IF NOT EXISTS user_role; 
 
 -- присвоение прав
-GRANT SELECT ON mydb.addresses TO basic_user_role;
-GRANT SELECT ON mydb.customers TO basic_user_role;
-GRANT SELECT ON mydb.goods TO basic_user_role;
-GRANT SELECT ON mydb.order_details TO basic_user_role;
-GRANT SELECT ON mydb.orders TO basic_user_role;
+GRANT SELECT ON mydb.addresses TO user_role;
+GRANT SELECT ON mydb.customers TO user_role;
+GRANT SELECT ON mydb.goods TO user_role;
+GRANT SELECT ON mydb.order_details TO user_role;
+GRANT SELECT ON mydb.orders TO user_role;
 
 -- создание пользователя, если он еще не существует
 CREATE USER IF NOT EXISTS 'user'@'localhost' IDENTIFIED BY '123';
